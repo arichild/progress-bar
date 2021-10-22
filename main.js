@@ -26,6 +26,9 @@ function changeTheme() {
 
 const animateProgressBar = () => {
     let scrollDistance = -section.getBoundingClientRect().top;
+
+    console.log(section.getBoundingClientRect());
+
     let progressWidth = (scrollDistance / (section.getBoundingClientRect().height - document.documentElement.clientHeight)) * 100;
 
     let value = Math.floor(progressWidth);
