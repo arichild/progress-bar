@@ -9,6 +9,7 @@
 body {
     background-color: #242423;
     overscroll-behavior-y: none;
+    width: 100%;
 }
 
 section {
@@ -62,6 +63,21 @@ button {
     color: #011627;
 }
 
+.up{
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border: 2px solid #fff;
+    color: #fff;
+    width: 50%;
+}
+
+.up.dark{
+    border: 2px solid #011627;
+    color: #011627;
+}
+
 @media (max-width: 700px) {
 
     h1 {
@@ -74,7 +90,7 @@ button {
         font-size: 15px;
     }
 
-    btn {
+    button {
         position: absolute;
     }
 }
