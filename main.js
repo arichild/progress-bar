@@ -1,8 +1,7 @@
 const section = document.querySelector('section');
 const progressBar = document.querySelector('#progress-bar');
-const btn = document.querySelector('.light');
+const btn = document.getElementById('theme');
 const btntoTop = document.querySelector('.up');
-const htmlElem = document.querySelector('html');
 
 btntoTop.addEventListener('click', toTop);
 
@@ -15,23 +14,45 @@ btn.addEventListener('click', changeTheme);
 function changeTheme() {
     const getClass = btn.getAttribute('class');
 
-    if(getClass === 'light') {
-        btn.setAttribute('class', 'dark');
-        btntoTop.setAttribute('class', 'up dark');
+    if(getClass === 'dark') {
+        btn.classList.remove('dark');
+        btn.classList.add('light');
+        localStorage.setItem('btn', "light");
+
+        document.body.classList.remove('dark');
+        document.body.classList.add('light');
+        localStorage.setItem('theme', 'light');
+
         btn.textContent = 'DARK';
+        localStorage.setItem("text", "DARK");
+    } else if(getClass === 'light') {
+        btn.classList.remove('light');
+        btn.classList.add('dark');
+        localStorage.setItem('btn', 'dark');
 
-        document.body.style.backgroundColor = '#fff';
-        section.style.color = 'black';
-    } else if(getClass === 'dark') {
-        btn.setAttribute('class', 'light');
-        btntoTop.setAttribute('class', 'up');
+        document.body.classList.remove('light');
+        document.body.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+
         btn.textContent = 'LIGHT';
-
-        document.body.style.backgroundColor = '#242423';
-        section.style.color = 'white';
+        localStorage.setItem('text', 'LIGHT');
     }
 
-    document.body.style.transition = 'all 1.2s';
+    document.body.style.transition = 'all 1s';
+}
+
+window.onload = checkTheme();
+
+function checkTheme() {
+    const localStorageTheme = localStorage.getItem("theme");
+    const localStorageBtn = localStorage.getItem("btn");
+    const localStorageText = localStorage.getItem("text");
+
+    if (localStorageTheme !== null && localStorageTheme === "light") {
+        document.body.className = localStorageTheme;
+        btn.classList = localStorageBtn;
+        btn.textContent = localStorageText;
+    }
 }
 
 const animateProgressBar = () => {

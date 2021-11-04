@@ -12,6 +12,28 @@ body {
     width: 100%;
 }
 
+body.light {
+    background-color: #fff;
+}
+
+body.dark {
+    background-color: #242423;
+}
+
+body.dark button {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+body.light section{
+    color:#242423;
+}
+
+body.light .up {
+    border: 2px solid #011627;
+    color: #011627;
+}
+
 section {
     color: #fff;
     font-size: 20px;
@@ -53,16 +75,6 @@ button {
     border-radius: 5px;
 }
 
-.light {
-    border: 2px solid #fff;
-    color: #fff;
-}
-
-.dark {
-    border: 2px solid #011627;
-    color: #011627;
-}
-
 .up{
     position: relative;
     top: 0;
@@ -73,10 +85,6 @@ button {
     width: 50%;
 }
 
-.up.dark{
-    border: 2px solid #011627;
-    color: #011627;
-}
 
 @media (max-width: 700px) {
 
