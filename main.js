@@ -17,7 +17,6 @@ function changeTheme() {
     if(getClass === 'dark') {
         btn.classList.remove('dark');
         btn.classList.add('light');
-        localStorage.setItem('btn', 'light');
 
         document.body.classList.remove('dark');
         document.body.classList.add('light');
@@ -28,7 +27,6 @@ function changeTheme() {
     } else if(getClass === 'light') {
         btn.classList.remove('light');
         btn.classList.add('dark');
-        localStorage.setItem('btn', 'dark');
 
         document.body.classList.remove('light');
         document.body.classList.add('dark');
@@ -45,12 +43,11 @@ window.onload = checkTheme();
 
 function checkTheme() {
     const localStorageTheme = localStorage.getItem('theme');
-    const localStorageBtn = localStorage.getItem('btn');
     const localStorageText = localStorage.getItem('text');
 
     if (localStorageTheme !== null && localStorageTheme === 'light') {
         document.body.className = localStorageTheme;
-        btn.classList = localStorageBtn;
+        btn.classList = localStorageTheme;
         btn.textContent = localStorageText;
     }
 }
