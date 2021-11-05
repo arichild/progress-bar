@@ -46,6 +46,7 @@ h1 {
     text-align: center;
     font-size: 40px;
     line-height: 135%;
+    margin-bottom: 50px;
 }
 
 p{
@@ -74,11 +75,12 @@ button {
     font-weight: 600;
     font-size: 14px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .up{
     position: relative;
-    top: 0;
+    top: 28px;
     left: 50%;
     transform: translate(-50%, 0);
     border: 2px solid #fff;
